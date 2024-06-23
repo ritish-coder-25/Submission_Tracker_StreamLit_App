@@ -1,4 +1,11 @@
-!pip install xlsxwriter
+import os
+
+# Install xlsxwriter if not already installed
+try:
+    import xlsxwriter
+except ImportError:
+    os.system('pip install xlsxwriter')
+
 import streamlit as st
 import pandas as pd
 from datetime import date
