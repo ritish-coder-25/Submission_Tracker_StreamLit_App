@@ -1,10 +1,15 @@
 import os
+import subprocess
 
-# Install xlsxwriter if not already installed
+# Function to install packages
+def install(package):
+    subprocess.check_call(["pip", "install", package])
+
 try:
     import xlsxwriter
 except ImportError:
-    os.system('pip install xlsxwriter')
+    install('xlsxwriter')
+    import xlsxwriter
 
 import streamlit as st
 import pandas as pd
